@@ -1,6 +1,7 @@
 import { readFileSync } from "fs";
 import Lexer from "./lexer";
 
-const testContents = readFileSync("../test.ds");
-const lexer = new Lexer(testContents);
+const fileName = "../test.ds";
+const testContents = readFileSync(fileName);
+const lexer = new Lexer(testContents.toString(), fileName);
 console.log(lexer.tokenize());

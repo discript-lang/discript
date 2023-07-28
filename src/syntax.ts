@@ -1,17 +1,20 @@
 export const enum Syntax {
 	LBrace, RBrace,
 	SingleQuote, DoubleQuote,
+	Semicolon, Colon,
+	Identifier,
 	Login
 }
 
 export type LiteralValue =
 	| number
 	| string
-	| boolean;
+	| boolean
+	| null;
 
-export const Keywords = {
-	"login": Syntax.Login
-};
+export const Keywords = new Map([
+	["login", Syntax.Login]
+]);
 
 export class Location {
 	public constructor(
